@@ -7,13 +7,20 @@ import {AiOutlineShoppingCart} from "react-icons/ai"
 import {AiOutlineUser} from "react-icons/ai"
 import {BiSolidOffer} from "react-icons/bi"
 
+import { useDispatch } from 'react-redux'
+import { setVisible } from '../features/sidebarSlice'
+
 
 const Navbar = () => {
+
+  const dispatch=useDispatch()
+
+
   return (
     <div className= 'sticky top-0 w-full bg-slate-900'>
       <div className='xl:hidden items-center justify-between flex m-auto  px-4'>
         <div className='w-[calc(50%-32px)]'>
-          <GiHamburgerMenu className='text-2xl text-white'/>
+          <GiHamburgerMenu onClick={()=>dispatch(setVisible())} className='text-2xl text-white'/>
         </div>
         <div><img src={Logo} className='h-16 p-2' /></div>
         <div className='flex w-[calc(50%-32px)] gap-3 justify-end'>
