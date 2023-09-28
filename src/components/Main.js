@@ -2,7 +2,7 @@ import React from 'react'
 
 const Main = ({children}) => {
   return (
-    <div className='mt-4 p-4 xl:w-4/6 m-auto'>
+    <div className='mt-4 p-4 w-full xl:w-4/6 m-auto'>
         {children}
     </div>
   )

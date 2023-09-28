@@ -6,7 +6,7 @@ const ProductCard = ({title,price,src}) => {
     <div className='w-full h-full hover:text-orange-400   text-slate-800  border flex flex-col rounded-lg pt-6 p-2 m-auto'>
       <img className='w-40 h-32 object-contain m-auto'  src={src} />
      
-        <div className='mt-4'>
+        <div className='mt-4 cursor-pointer'>
           <p className=''>{title}</p>
           <p>${price}</p>
         </div>

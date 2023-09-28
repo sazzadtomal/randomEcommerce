@@ -14,6 +14,7 @@ import { NavLink } from 'react-router-dom'
 import { categories } from '../Data/data'
 
 
+
 const Navbar = () => {
   const dropSearch=useSelector(getDropSearch)
   const dispatch=useDispatch()
@@ -28,12 +29,13 @@ const Navbar = () => {
       <div className= 'sticky top-0 w-full bg-slate-900'>
         <div className='xl:hidden items-center justify-between flex m-auto  px-4'>
           <div onClick={()=>dispatch(setVisible())} className='w-[calc(50%-32px)]'>
-            <GiHamburgerMenu  className='text-2xl text-white'/>
+            <GiHamburgerMenu  className='text-2xl text-white hover:text-orange-400 cursor-pointer'/>
           </div>
-          <div onClick={()=>navigate("/")}><img src={Logo} className='h-16 p-2'/></div>
+          <div onClick={()=>navigate("/")}><img src={Logo} className='h-16 p-2 cursor-pointer'/></div>
           <div className='flex w-[calc(50%-32px)] gap-3 justify-end'>
-             <AiOutlineSearch onClick={()=>dispatch(setDropSearch())} className='text-2xl text-white'/>
-             <AiOutlineShoppingCart className='text-2xl text-white'/>
+             <AiOutlineSearch onClick={()=>dispatch(setDropSearch())} className='text-2xl text-white hover:text-orange-400 cursor-pointer'/>
+             <AiOutlineShoppingCart className='text-2xl text-white hover:text-orange-400 cursor-pointer'/>
+             <AiOutlineUser  className='hover:text-orange-400 cursor-pointer text-2xl text-white' onClick={()=>navigate("/login")}/>
           </div>
         </div>
          <div className={ `fixed mt-2 w-full block ${dropSearch?"block":"hidden "} lg:hidden`}>
@@ -43,17 +45,17 @@ const Navbar = () => {
         {/*desktop navbar*/}
         <div>
           <div className='h-20 hidden xl:flex justify-between items-center xl:w-4/6 gap-4  m-auto'>
-            <img onClick={()=>navigate("/")} src={Logo} className='h-16 p-2' />
+            <img onClick={()=>navigate("/")} src={Logo} className='h-16 p-2 cursor-pointer' />
             <Search/>
             <div className='flex gap-16'>
-              <div className=' flex items-center gap-2 text-white'>
-                <AiOutlineUser className='text-2xl'/>
+              <div className=' flex items-center gap-2 text-white hover:text-orange-400 cursor-pointer' onClick={()=>navigate("/login")} >
+                <AiOutlineUser className='text-2xl' />
                 <div>
                   <p className='text-sm'>User</p>
                   <span className= 'text-xs'>Register ot login</span>
                 </div>
               </div>
-              <div className=' flex items-center gap-2 text-white'>
+              <div className=' flex items-center gap-2 text-white hover:text-orange-400 cursor-pointer'>
                 <BiSolidOffer className='text-2xl'/>
                 <div>
                   <p className='text-sm'>Offers</p>
