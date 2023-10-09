@@ -12,6 +12,7 @@ import { useDispatch,useSelector } from 'react-redux'
 import { setVisible } from '../features/sidebarSlice'
 import { NavLink } from 'react-router-dom'
 import { categories } from '../Data/data'
+import {setCartVisible} from "../features/cartSlice"
 
 
 
@@ -34,7 +35,7 @@ const Navbar = () => {
           <div onClick={()=>navigate("/")}><img src={Logo} className='h-16 p-2 cursor-pointer'/></div>
           <div className='flex w-[calc(50%-32px)] gap-3 justify-end'>
              <AiOutlineSearch onClick={()=>dispatch(setDropSearch())} className='text-2xl text-white hover:text-orange-400 cursor-pointer'/>
-             <AiOutlineShoppingCart className='text-2xl text-white hover:text-orange-400 cursor-pointer'/>
+             <AiOutlineShoppingCart onClick={()=>dispatch(setCartVisible())} className='text-2xl text-white hover:text-orange-400 cursor-pointer'/>
              <AiOutlineUser  className='hover:text-orange-400 cursor-pointer text-2xl text-white' onClick={()=>navigate("/login")}/>
           </div>
         </div>

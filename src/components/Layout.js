@@ -7,12 +7,15 @@ import Sidebar from './Sidebar'
 import {Route,Routes} from "react-router-dom";
 import Phones from "../Pages/Phones"
 import Login from '../Pages/Login'
+import Cart from './Cart'
 
 const Layout = () => {
   return (
      <section className='min-h-screen relative flex flex-col'>
        <Navbar/>
        <Sidebar/>
+       <Cart/>
+
        <Main className="flex-grow">
         <Routes>
           <Route index element={<Home/>} />
